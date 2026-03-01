@@ -134,7 +134,7 @@ def make_dependency_file(
     str
         The contents of the file.
     """
-    relative_path_to_config_file = os.path.relpath(config_file, output_dir)
+    relative_path_to_config_file = os.path.relpath(config_file, output_dir).replace("\\", "/")
     file_contents = textwrap.dedent(
         f"""\
         {HEADER}
